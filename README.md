@@ -8,13 +8,29 @@
 <https://ironartisan.top/C-Plus-Notes/>
 
 
-# 学习资料
+# 学习路线
+
+对于新手小白要如何学习 C++ 呢？这里总结了一些学习资源。
+## 学习书籍
 
 按顺序看这几本书《C++ Primer 第5版》-> 《Effective C++》 ->《Effective stl》 -> 《STL源码剖析》-> 《深度探索C++对象模型》（选看）
 
 
-学习网站 推荐 [learncpp.com](https://www.learncpp.com/) ，可以说是非常全面系统的介绍了C++相关知识，从编译器使用到如何运行第一行代码都介绍的非常细致。
+## 学习网站
 
+### 基础
 
-平时看一看语法，某些函数的使用，推荐：<http://www.cplusplus.com>
+* [learncpp.com](https://www.learncpp.com/) 
+* [cplusplus](http://www.cplusplus.com>)
+* [CPlusPlusThings](https://github.com/Light-City/CPlusPlusThings) 
+
+### 进阶
+
+* [modern-cpp-tutorial](https://github.com/changkun/modern-cpp-tutorial)
+* [CppTemplateTutorial](https://github.com/wuye9036/CppTemplateTutorial)
+
+### 项目实战
+* [MyTinySTL](https://github.com/Alinshans/MyTinySTL)
+* [俄罗斯方块](https://github.com/taylorconor/tinytetris)
+* [计算器](https://github.com/microsoft/calculator)
 
