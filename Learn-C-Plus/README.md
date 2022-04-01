@@ -1,8 +1,8 @@
 ---
-sort: 3
+sort: 2
 ---
 
-# 个人总结
+# Learn C++笔记
 
 {% include list.liquid %}
 
