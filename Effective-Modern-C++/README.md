@@ -1,8 +1,8 @@
 ---
-sort: 10
+sort: 3
 ---
 
-# 个人总结
+# Effective Modern C++ 笔记
 
 {% include list.liquid %}
 
