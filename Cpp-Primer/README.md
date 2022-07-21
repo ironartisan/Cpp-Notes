@@ -4,6 +4,8 @@ sort: 1
 
 # C++ Primer 第5版学习笔记
 
+![book](../images/c-primer-plus.png)
+
 ## 目录
 
 [第1章 开始](./1.开始.md)
