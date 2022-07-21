@@ -126,45 +126,12 @@ decltype(auto) f2() {
 }
 ```
 
-## 条款4：掌握查看型别推导结果的方法
+| 总结：                                                       |
+| ------------------------------------------------------------ |
+| `decltype`几乎总是得到一个变量或表达式的类型而不需要任何修改 |
+| 对于非变量名的类型为`T`的左值表达式，`decltype`总是返回`T&`  |
+| `C++14`支持`decltype(auto)`，它的行为就像`auto`,从初始化操作来推导类型，但是它推导类型时使用`decltype`的规则 |
 
 
-* 最简单直接的方法是在 IDE 中将鼠标停放在变量上
-
-![](../images/1-1.png)
-
-* 利用报错信息，比如写一个声明但不定义的类模板，用这个模板创建实例时将出错，编译将提示错误原因
-
-```cpp
-template <typename T>
-class A;
-
-A<decltype(x)> xType;  // 未定义类模板，错误信息将提示 x 类型
-// 比如对 int x 报错如下
-// error C2079 : “xType”使用未定义的 class“A<int>”
-```
-
-* 使用 [type_id 运算符](https://en.cppreference.com/w/cpp/language/typeid)和 [std::type_info::name](https://en.cppreference.com/w/cpp/types/type_info/name) 获取类型，但得到的类型会忽略 cv 和引用限定符
-
-```cpp
-template <typename T>
-void f(T& x) {
-  std::cout << "T = " << typeid(T).name() << '\n';
-  std::cout << "x = " << typeid(x).name() << '\n';
-}
-```
-
-* 使用 [Boost.TypeIndex](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_typeindex_header_reference.html#header.boost.type_index_hpp) 可以得到精确类型
-
-```cpp
-#include <boost/type_index.hpp>
-
-template <typename T>
-void f(const T& x) {
-  using boost::typeindex::type_id_with_cvr;
-  std::cout << "T = " << type_id_with_cvr<T>().pretty_name() << '\n';
-  std::cout << "x = " << type_id_with_cvr<decltype(x)>().pretty_name() << '\n';
-}
-```
 
 
